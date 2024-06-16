@@ -15,17 +15,21 @@ https://fastapi.tiangolo.com/
 https://www.sqlalchemy.org/
 
 install fastapi and  uvicorn
+
 install sqlalcmey 
 I was using dbeaver, a GUI for databases-- to use it, you may need to add a user to the database using mariadb command line. 
 using mariadb
 
 
-mariadb connecter , sql alchemy , fastapi
+mariadb connecter , sql alchemy , fastapi all need to be installed. Mariadb connector may or may not come with one of the other libraries. 
 starting services: 
 systemctl start mariadb 
 
-dbeaver connect
-starting app-- reload for development
+
+starting app
 uvicorn backend:app -- reload
 
-once app is started, shoudl be able to navigate to api docs page and can interact from there. 
+once app is started, should be able to navigate to api docs page and can interact from there. its localhost:8000/docs for me. 
+
+All of the current stuff is using get requests, im pretty sure this is bad for whatever reason. one task could be to change those to posts. 
+authentication returns a JWT token . 
