@@ -1,9 +1,9 @@
-This backend uses python running on fastapi for the HTTP server, SQL alchmey for interacting with SQL , faker for generating data, and lots of dependencies as well. 
+This backend uses python running on fastapi for the HTTP server, SQL alchmey for interacting with SQL , faker for generating data, and lots of dependencies as well. Its bascially an API for books, orders users, and all that stuff. A frontend would just need to talk to this API to display stuff. Its got an interactive documtation system thats really helpful for figuring out what code needs to do. 
 
 debian base install on virtual box. 
 
 https://www.virtualbox.org/wiki/Linux_Downloads  
-I chose debain 12
+I chose debain 12, but might switch to debain 11 cause that one seems to be more avaialble on cloud providers. 
 Create project folder on desktop
 
 virtual env with python to project folder
@@ -13,7 +13,7 @@ im using vscode on the debian box for development, but maybe you could set up a 
 https://www.geeksforgeeks.org/python-virtual-environment/
 https://fastapi.tiangolo.com/
 https://www.sqlalchemy.org/
-
+##install dependencies in virtual env with pip##
 install fastapi and  uvicorn
 
 install sqlalcmey 
