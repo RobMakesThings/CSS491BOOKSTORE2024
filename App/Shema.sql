@@ -65,3 +65,14 @@ CREATE TABLE `orderItems` (
   CONSTRAINT `orderItems_Books_FK` FOREIGN KEY (`book_id`) REFERENCES `Books` (`id`),
   CONSTRAINT `orderItems_Orders_FK` FOREIGN KEY (`order_id`) REFERENCES `Orders` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=542 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE USER 'API'@'%' IDENTIFIED BY 'hello';
+ALTER USER 'API'@'%'
+WITH
+	MAX_QUERIES_PER_HOUR 512
+	MAX_CONNECTIONS_PER_HOUR 0;
+GRANT Alter ON BookStoreDB.* TO 'API'@'%';
+GRANT Insert ON BookStoreDB.* TO 'API'@'%';
+GRANT Select ON BookStoreDB.* TO 'API'@'%';
+GRANT Update ON BookStoreDB.* TO 'API'@'%';
