@@ -1,3 +1,5 @@
+#this file is what interacts with the database. Functions in the API are defined here.
+
 import sqlalchemy
 import json
 from sqlalchemy.orm import declarative_base
@@ -7,8 +9,11 @@ from shema import *
 # SQLALCHEMY_DATABASE_URL = "mysql+pymysql://apiAccess:hello@some_mariadb/BookStoreDB?charset=utf8mb4"
 
 # SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-engine = sqlalchemy.create_engine("mariadb+mariadbconnector://API1:hello123@127.0.0.1:3306/BookStoreDB")
+# not secure for auth, better pass needed probably 
+engine = sqlalchemy.create_engine("mariadb+mariadbconnector://API:hello@127.0.0.1:3306/BookStoreDB")
+
 Base = declarative_base()
+
 columnOrder = ["Genre","id","Title","Author","Price",]
 # columnOrder = ["id","code","name","description","Price"]
 
