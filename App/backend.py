@@ -1,10 +1,14 @@
+
+#this file defines the endpoints for the API. CRUD operations, logins, etc. At the moment most of everything is a get request, but i plan on changing that. 
+#based on examples from the FASTAPI website
+
 from fastapi import FastAPI, Depends, HTTPException, status
 from typing import Annotated
 from fastapi.staticfiles import StaticFiles
 from database import *
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel 
 app = FastAPI()
 
 #need to make middleware more secure here. 
@@ -64,7 +68,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         )
     return user
 
-
+#not used 
 async def get_current_active_user(
     current_user: Annotated[User, Depends(get_current_user)]
 ):
@@ -120,10 +124,10 @@ async def getAllBooks():
 
 
 
-#update
+#update-- should add 
 @app.get("/update/{id}:{newTitle}:{Author}:{Genre}:{Price}")#updates a book by given ID
 async def updateExistingBook(id,newTitle,Author,Genre,Price):
-    print("im updating an existing one captain!")
+    print("im updating an existing one")
     return {"data":f' {updateBook(id,newTitle,Author,Genre,Price)}'}
 
 
@@ -145,15 +149,19 @@ async def login1(username,password):
 @app.get("/users/search/all")
 async def getAllUsers():
     return {"data":getUsers()}
+    
 @app.get("/users/add/{Name}:{Address}:{Email}:{Password}")
 async def addUser(Name,Address,Email,Password):
     return {"data":addUser(Name,Address,Email,Password)}
+    
 @app.get("/users/update/{id}:{Name}:{Address}:{Email}")
 async def updateUser(id,Name,Address,Email):
     return {"data":updateUser(id,Name,Address,Email)}
+    
 #should be accepting a pass hash here if im being honest .. probably want the frontend to hash it? 
 async def updateUserPass(id,Password):
     return {"data":updateUser(id,Password)}
+    
 @app.get("/user/delete/{id}")
 async def delUser(id):
     return {"data":delUser(id)}
