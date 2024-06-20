@@ -99,9 +99,9 @@ def addSupplier(entries):
     with engine.connect() as conn:
         result = conn.execute(sqlalchemy.insert(Supplier),batch)
         conn.commit()
-# addNewBook(50)
-# addUsers(25)
-# # addSupplier(5)
+addNewBook(50)
+addUsers(25)
+# addSupplier(5)
 addOrder(15)
 # #todo: add review
 # print()
