@@ -6,7 +6,7 @@
 #search broken
 from fastapi import FastAPI, Depends, HTTPException, status
 from typing import Annotated
-from fastapi.staticfiles import StaticFiles
+# from fastapi.staticfiles import StaticFiles
 from database import *
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
@@ -139,8 +139,8 @@ async def updateExistingBook(id,newTitle,Author,Genre,Price):
 async def deleteBookById(id):
     return {"Deleted:":f"{deleteBook(id)}"}
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-#change to post
+# app.mount("/static", StaticFiles(directory="static"), name="static")
+# #change to post
 @app.get("/user/login/{username}:{password}")
 #sends hash receives hash? 
 async def login1(username,password):
