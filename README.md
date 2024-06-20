@@ -14,19 +14,23 @@ https://www.virtualbox.org/
 
 Install OVF image
 in virtual box:  File > import appliance and choose image. make sure to choose a base folder that has some free space.
+
 start machine and login. password is password for user
 
 open project folder in code in terminal it would be :
 
+```
 code ./Desktop/project/bookstore
-starting app, inside of vs code. navigate to python file and press play button in top right , in the terminal window opened, run the following
+```
 
+starting app, inside of vs code. navigate to python file and press play button in top right , in the terminal window opened, run the following
+```
 uvicorn backend:app -- reload
+```
 once app is started, should be able to navigate to api docs page and can interact from there. its localhost:8000/docs for me.
 I have uploaded so far the backend documents. 
 
-Overall, the app should be able to display a library of books, and be able to make a cart of books to checkout. I dont think integrating a payment processing service makes any sense at all. 
-
+Overall, the app should be able to display a library of books, and be able to make a cart of books to checkout. Admin should be able to add books, but customers should not. 
 ![Screenshot from 2024-06-15 19-17-49](https://github.com/mastaginger/CSS491BOOKSTORE2024/assets/51903522/75447ba6-e072-46bc-8967-f4d18dcdc00b)
  This is the screenshot of the backend api docs up and running. Inside of the next folder there are some super basic directions for setting everything up. 
  
