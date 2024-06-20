@@ -1,4 +1,25 @@
+CREATE USER 'API'@'%' IDENTIFIED BY 'hello';
+ALTER USER 'API'@'%'
+WITH
+	MAX_QUERIES_PER_HOUR 512
+	MAX_CONNECTIONS_PER_HOUR 0;
+GRANT Alter ON BookStoreDB.* TO 'API'@'%';
+GRANT Insert ON BookStoreDB.* TO 'API'@'%';
+GRANT Select ON BookStoreDB.* TO 'API'@'%';
+GRANT Update ON BookStoreDB.* TO 'API'@'%';
+
+
 CREATE DATABASE `BookStoreDB` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+Use BookstoreDB;
+CREATE TABLE `Users` (
+  `Name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `Password` varchar(100) DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `Address` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=510 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `Books` (
   `Genre` varchar(128) DEFAULT 'unknown',
@@ -45,14 +66,7 @@ CREATE TABLE `Suppliers` (
   PRIMARY KEY (`Supplier_Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `Users` (
-  `Name` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `Password` varchar(100) DEFAULT NULL,
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `Address` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=510 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 CREATE TABLE `orderItems` (
   `orderItem_id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -67,12 +81,3 @@ CREATE TABLE `orderItems` (
 ) ENGINE=InnoDB AUTO_INCREMENT=542 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE USER 'API'@'%' IDENTIFIED BY 'hello';
-ALTER USER 'API'@'%'
-WITH
-	MAX_QUERIES_PER_HOUR 512
-	MAX_CONNECTIONS_PER_HOUR 0;
-GRANT Alter ON BookStoreDB.* TO 'API'@'%';
-GRANT Insert ON BookStoreDB.* TO 'API'@'%';
-GRANT Select ON BookStoreDB.* TO 'API'@'%';
-GRANT Update ON BookStoreDB.* TO 'API'@'%';
