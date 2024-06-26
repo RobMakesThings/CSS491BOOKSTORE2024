@@ -10,7 +10,8 @@ This backend uses python running on fastapi for the HTTP server, SQL alchmey for
  ## Windows build ##
  
 install msi file from https://mariadb.com/downloads/
-default settings? easy root password you'll remember. not open to remote users. Its going to install a heidiSQL client, we'll use that later as a gui to import the shema. 
+
+default settings: easy root password you'll remember. not open to remote users. Its going to install a heidiSQL client, we'll use that later as a gui to import the shema. 
 
 instructions are based on using VS code, with the built in powershell console. commands might be able to be entered elsewhere. 
 
@@ -22,6 +23,8 @@ setup python virtual enviroment  --- more info https://docs.python.org/3/library
 ```
 Python -m venv C:\Users\{yourusername}\Desktop\Bookstore
 ```
+
+place files in "app" folder in the same directory used above
 ```
 C:\Users\{you}\Desktop\Bookstore
 
