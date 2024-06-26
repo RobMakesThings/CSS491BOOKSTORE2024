@@ -8,6 +8,77 @@ Ive included instructions for installing the image, which is probably way easier
 
 https://www.virtualbox.org/
 
+
+ ## Windows build ##
+ 
+install msi file from https://mariadb.com/downloads/
+default settings? easy root password you'll remember. not open to remote users. Its going to install a heidiSQL client, we'll use that later as a gui to import the shema. 
+
+
+install python 3.12 from windows store 
+create project folder on desktop
+
+setup python virtual enviroment  --- more info https://docs.python.org/3/library/venv.html
+
+```
+Python -m venv C:\Users\{yourusername}\Desktop\Bookstore
+```
+```
+C:\Users\{you}\Desktop\Bookstore
+
+```
+
+```
+.\Scripts\Activate
+```
+if error, this will be needed. May be turn it off later. 
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser 
+```
+now virtual enviroment is active. may have tag. 
+upgrade pip
+```
+.\Scripts\python.exe -m pip install --upgrade pip  --
+```
+
+install all of the things
+
+```
+pip install fastapi sqlalchemy faker mariadb
+```
+
+
+https://mariadb.com/downloads/
+
+
+
+## setup database. ##
+
+
+open heidisql , connect to database with root user and password entered into setup for mariadb
+
+file>runSql > Shema.sql
+
+press f5, should be a database named bookstore now. 
+
+in code, can go into project folder, if we run the genData.py itll fill the database with records. i like to press the little play button. 
+
+uvicorn backend:app
+
+in python virtual enviroment will open webpage. should see :
+INFO:     Started server process [7796]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+From here navigate to :
+```
+http://127.0.0.1:8000/docs
+```
+
+Here are interactive docs. As of now some endpoints are broken, like authentication, but orders, books, users, all should work. 
+
+
 ## Install OVF image ##
 download image
 in virtual box File > import appliance and choose image. make sure to choose a base folder that has some free space.   
