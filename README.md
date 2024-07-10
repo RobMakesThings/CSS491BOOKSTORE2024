@@ -1,15 +1,43 @@
+# BookStore app #
+
+# Tech Stack #
+
+### Front End ###
+**nodejs** 
+Vue/Primevue/pinia -- Frontend frameworks with state management
+Vite -- Server 
+
+### Back End ###
+
+Python based
+FastAPI -- Provides fast and easy to use openAPI based library
+SQLAlchemy -- Library used to interact with database
+mariaDB -- Relational database
+Faker -- Generating usable fake data to put in database
+
+
+
+# Frontend Setup
+clone repo 
+
+navigate to frontend folder
+
+npm install
+
+npm run dev
+
 # Backend setup #
 
-This backend uses python running on fastapi for the HTTP server, SQL alchmey for interacting with SQL , faker for generating data. Its bascially an API for books, orders users, and all that stuff. A frontend would just need to talk to this API to display stuff. Its got an interactive documtation system thats really helpful for figuring out what code needs to do. 
-
-
-
+navigate to backend folder and set virtual enviroment
+```
+pip install -r  requirements.txt
+```
 
 
 
  ## Windows build ##
  
-install msi file from https://mariadb.com/downloads/
+install mariaDB msi file from https://mariadb.com/downloads/
 
 default settings: easy root password you'll remember. not open to remote users. Its going to install a heidiSQL client, we'll use that later as a gui to import the shema. 
 
@@ -46,7 +74,7 @@ upgrade pip
 install all of the things
 
 ```
-pip install fastapi sqlalchemy faker mariadb
+pip install -r requirements.txt
 ```
 
 
@@ -81,30 +109,7 @@ http://127.0.0.1:8000/docs
 Here are interactive docs. As of now some endpoints are broken, like authentication, but orders, books, users, all should work. 
 
 
-## Install OVF image ##
-download image
-in virtual box File > import appliance and choose image. make sure to choose a base folder that has some free space.   
-start machine and login. password is password for user
-
-
-open project folder in code
-in terminal it would be :
-```
-code ./Desktop/project/bookstore
-````
-
-starting app, inside of vs code. navigate to python file and press play button in top right , in the terminal window opened,  run the following
-```
-uvicorn backend:app -- reload
-```
-
-once app is started, should be able to navigate to api docs page and can interact from there. its localhost:8000/docs for me. 
-
-All of the current stuff is using get requests, im pretty sure this is bad for whatever reason. one task could be to change those to posts. 
-
-
-authentication returns a JWT token . Ive got it somewhat implemented, but plan to work on that soon. 
-## Build virtual machine on virtualbox ##
+## Build virtual machine from "scratch" on virtualbox ##
 
 
 https://www.virtualbox.org/
