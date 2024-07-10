@@ -4,15 +4,22 @@
 
 ### Front End ###
 **nodejs** 
+
 Vue/Primevue/pinia -- Frontend frameworks with state management
+
 Vite -- Server 
 
 ### Back End ###
 
 Python based
+
+
 FastAPI -- Provides fast and easy to use openAPI based library
+
 SQLAlchemy -- Library used to interact with database
+
 mariaDB -- Relational database
+
 Faker -- Generating usable fake data to put in database
 
 
@@ -21,10 +28,14 @@ Faker -- Generating usable fake data to put in database
 clone repo 
 
 navigate to frontend folder
+```
 
 npm install
+```
+```
 
 npm run dev
+```
 
 # Backend setup #
 
